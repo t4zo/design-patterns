@@ -4,15 +4,15 @@ namespace DesignPatterns.Observer.Interfaces
 {
     internal class WeatherData : ISubject
     {
-        public IList<IObserver> Observers { get; private set; }
-        public float Temperature { get; private set; }
-        public float Humidity { get; private set; }
-        public float Pressure { get; private set; }
-
         public WeatherData()
         {
             Observers = new List<IObserver>();
         }
+
+        public IList<IObserver> Observers { get; }
+        public float Temperature { get; private set; }
+        public float Humidity { get; private set; }
+        public float Pressure { get; private set; }
 
         public void RegisterObserver(IObserver observer)
         {
@@ -26,9 +26,9 @@ namespace DesignPatterns.Observer.Interfaces
 
         public void NotifyObservers()
         {
-            foreach (var Observer in Observers)
+            foreach (var observer in Observers)
             {
-                Observer.Update(Temperature, Humidity, Pressure);
+                observer.Update();
             }
         }
 

@@ -2,6 +2,6 @@
 {
     internal interface IDisplayElement
     {
-        void Display();
+        public void Display();
     }
 }

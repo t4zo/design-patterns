@@ -1,15 +1,19 @@
 ﻿namespace DesignPatterns.Decorator
 {
-    class Mocha : CondimentDecorator
+    class Mocha : ICondimentDecorator
     {
-        private readonly Beverage _beverage;
+        private readonly IBeverage _beverage;
+        public string Description { get; set; }
 
-        public Mocha(Beverage beverage)
+        public Mocha(IBeverage beverage)
         {
             _beverage = beverage;
             Description += $"{_beverage.Description}, Mocha";
         }
 
-        public override double Cost() => .20 + _beverage.Cost();
+        public double Cost()
+        {
+            return .20 + _beverage.Cost();
+        }
     }
 }

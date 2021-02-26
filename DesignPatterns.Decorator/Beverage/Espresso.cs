@@ -1,12 +1,17 @@
 ﻿namespace DesignPatterns.Decorator
 {
-    class Espresso : Beverage
+    class Espresso : IBeverage
     {
+        public string Description { get; set; }
+
         public Espresso()
         {
             Description = "Espresso";
         }
 
-        public override double Cost() => 1.99;
+        public double Cost()
+        {
+            return 1.99;
+        }
     }
 }

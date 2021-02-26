@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Decorator
 {
-    abstract class CondimentDecorator : Beverage
+    interface ICondimentDecorator : IBeverage
     {
     }
 }

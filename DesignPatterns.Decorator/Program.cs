@@ -2,14 +2,14 @@
 
 namespace DesignPatterns.Decorator
 {
-    class Program
+    internal class Program
     {
         private static void Main()
         {
-            Beverage espresso = new Espresso();
+            IBeverage espresso = new Espresso();
             Console.WriteLine($"{espresso.Description} ${espresso.Cost()}");
 
-            Beverage houseBlend = new HouseBlend();
+            IBeverage houseBlend = new HouseBlend();
             houseBlend = new Mocha(houseBlend);
             houseBlend = new Mocha(houseBlend);
             Console.WriteLine($"{houseBlend.Description} ${houseBlend.Cost()}");

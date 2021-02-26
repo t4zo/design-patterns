@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace DesignPatterns.Observer
 {
@@ -15,10 +14,17 @@ namespace DesignPatterns.Observer
             WeatherData.RegisterObserver(this);
         }
 
-        public void Update(float temperature, float humidity, float pressure)
+        //public void Update(float temperature, float humidity, float pressure)
+        //{
+        //    Temperature = temperature;
+        //    Humidity = humidity;
+        //    Display();
+        //}
+
+        public void Update()
         {
-            Temperature = temperature;
-            Humidity = humidity;
+            Temperature = WeatherData.Temperature;
+            Humidity = WeatherData.Humidity;
             Display();
         }
 
